@@ -30,3 +30,33 @@ trainer.train()
 trainer.summary()
 
 trainer.save()
+
+
+from src.models.evaluate import ModelEvaluator
+
+leaderboard = trainer.summary()
+
+(
+    ModelEvaluator(leaderboard)
+    .save()
+    .plot()
+)
+
+
+from src.models.predict import Predictor
+
+predictor = Predictor(
+    "outputs/models/best_model.pkl"
+)
+
+predictions = predictor.predict(df)
+
+print(
+    predictions[
+        [
+            "location_name",
+            "temperature_celsius",
+            "prediction",
+        ]
+    ].head()
+)

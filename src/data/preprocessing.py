@@ -3,26 +3,15 @@ from __future__ import annotations
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
+from config.settings import FEATURES
+from config.settings import TARGET
+
 
 class DataPreprocessor:
     """Preprocessing utilities."""
 
-    FEATURE_COLUMNS = [
-        "humidity",
-        "pressure_mb",
-        "wind_kph",
-        "precip_mm",
-        "cloud",
-        "visibility_km",
-        "uv_index",
-        "air_quality_PM2.5",
-        "air_quality_PM10",
-    ]
-
-    TARGET_COLUMN = "temperature_celsius"
-
-    REQUIRED_COLUMNS = FEATURE_COLUMNS + [
-        TARGET_COLUMN,
+    REQUIRED_COLUMNS = FEATURES + [
+        TARGET,
         "last_updated",
     ]
 
@@ -70,7 +59,7 @@ class DataPreprocessor:
         columns: list[str] | None = None,
     ) -> "DataPreprocessor":
 
-        columns = columns or self.FEATURE_COLUMNS
+        columns = columns or FEATURES
 
         self.df[columns] = self.scaler.fit_transform(
             self.df[columns]
