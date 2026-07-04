@@ -4,16 +4,11 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 from config.settings import FEATURES
-from config.settings import TARGET
+from config.settings import REQUIRED_COLUMNS
 
 
 class DataPreprocessor:
     """Preprocessing utilities."""
-
-    REQUIRED_COLUMNS = FEATURES + [
-        TARGET,
-        "last_updated",
-    ]
 
     def __init__(self, dataframe: pd.DataFrame):
         self.df = dataframe.copy()
@@ -31,7 +26,7 @@ class DataPreprocessor:
     def validate(self) -> "DataPreprocessor":
         missing = [
             column
-            for column in self.REQUIRED_COLUMNS
+            for column in REQUIRED_COLUMNS
             if column not in self.df.columns
         ]
 

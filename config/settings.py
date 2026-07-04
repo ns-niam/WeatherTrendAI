@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 ROOT_DIR = Path(__file__).resolve().parent.parent
 
 DATA_DIR = ROOT_DIR / "data"
@@ -16,13 +15,12 @@ MODEL_DIR.mkdir(parents=True, exist_ok=True)
 RESULT_DIR.mkdir(parents=True, exist_ok=True)
 REPORT_DIR.mkdir(parents=True, exist_ok=True)
 
-DATASET_NAME = "Global Weather Repository.csv"
-
+DATASET_NAME = "weather.csv"
 DATASET_PATH = RAW_DATA_DIR / DATASET_NAME
 
 TARGET = "temperature_celsius"
 
-FEATURES = [
+RAW_FEATURES = [
     "humidity",
     "pressure_mb",
     "wind_kph",
@@ -32,6 +30,9 @@ FEATURES = [
     "uv_index",
     "air_quality_PM2.5",
     "air_quality_PM10",
+]
+
+ENGINEERED_FEATURES = [
     "temp_difference",
     "air_quality_score",
     "weather_severity",
@@ -41,11 +42,13 @@ FEATURES = [
     "hour",
 ]
 
-TEST_SIZE = 0.2
+FEATURES = RAW_FEATURES + ENGINEERED_FEATURES
 
-RANDOM_STATE = 42
-
-REQUIRED_COLUMNS = FEATURES + [
+REQUIRED_COLUMNS = RAW_FEATURES + [
     TARGET,
     "last_updated",
+    "feels_like_celsius",
 ]
+
+TEST_SIZE = 0.2
+RANDOM_STATE = 42
