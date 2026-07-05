@@ -62,7 +62,7 @@ margin-top:2px;
 </div>
 
 <div class="built-name">
-Niam
+NS Niam
 </div>
 
 <div class="built-role">
@@ -91,3 +91,16 @@ show_leaderboard()
 show_model_chart()
 
 show_footer()
+
+st.divider()
+
+st.subheader(" About PM Accelerator")
+
+st.info(
+    """
+This project was developed as part of the PM Accelerator AI Engineering Technical Assessment.
+
+PM Accelerator's mission is to help aspiring AI engineers and product builders
+gain practical experience through real-world projects, mentorship, and innovation.
+"""
+)
