@@ -550,6 +550,23 @@ Displays the final project summary, methodology, and key findings.
 
 ![Project Summary](docs/screenshots/project_summary.png)
 
+## 📊 Results & Key Insights
+
+### Model Performance
+
+- 🏆 **Best Model:** Random Forest Regressor
+- 🎯 **Best R² Score:** **0.9506**
+- 📉 **MAE:** **1.224**
+- 📊 **RMSE:** **2.124**
+
+### Key Insights
+
+- Random Forest achieved the highest prediction accuracy among all evaluated models.
+- XGBoost and LightGBM also demonstrated strong performance with competitive R² scores.
+- Feature engineering significantly improved model accuracy.
+- Prophet successfully captured temporal trends for future weather forecasting.
+- Air quality, humidity, pressure, and temperature-related features were among the most influential predictors.
+
 ## 🚀 PM Accelerator Mission
 
 This project was developed as part of the **PM Accelerator AI Engineering Technical Assessment**.
@@ -560,21 +577,23 @@ WeatherTrendAI demonstrates the application of machine learning, software engine
 
 ## 🔮 Future Improvements
 
-Potential enhancements include:
+Future enhancements for WeatherTrendAI include:
 
-- Deep Learning-based weather forecasting
+- Deep Learning models (LSTM / Transformer)
 - Real-time weather API integration
 - Docker containerization
 - Cloud deployment
-- User authentication
-- Interactive geographical weather maps
-- Automated model retraining pipeline
+- Interactive weather maps
+- Model monitoring and automatic retraining
+- User authentication and project analytics
+- Multi-city forecasting dashboard
+
 
 ## 👨‍💻 Author
 
 **Md. Sha Niamatullah (NS Niam)**
 
-AI & Machine Learning Engineer
+AI & Machine Learning Engineering Student
 
 - GitHub: https://github.com/ns-niam
 - LinkedIn: https://www.linkedin.com/in/md-sha-niamatullah
@@ -582,4 +601,4 @@ AI & Machine Learning Engineer
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
