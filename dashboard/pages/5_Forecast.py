@@ -26,11 +26,13 @@ st.dataframe(
     width="stretch",
 )
 
-fig = px.line(
-    df,
-    x="ds",
-    y="yhat",
-    title="Forecast",
+from src.visualization.plots import forecast_plot
+
+fig = forecast_plot(df)
+
+st.plotly_chart(
+    fig,
+    width="stretch",
 )
 
 st.plotly_chart(

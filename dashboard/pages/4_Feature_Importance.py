@@ -27,12 +27,13 @@ st.dataframe(
     hide_index=True,
 )
 
-fig = px.bar(
-    df,
-    x="Importance",
-    y="Feature",
-    orientation="h",
-    title="Feature Importance",
+from src.visualization.plots import feature_importance_plot
+
+fig = feature_importance_plot(df)
+
+st.plotly_chart(
+    fig,
+    width="stretch",
 )
 
 fig.update_layout(
