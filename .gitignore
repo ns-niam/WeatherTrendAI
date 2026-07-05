@@ -6,7 +6,6 @@ venv/
 __pycache__/
 *.py[cod]
 *.pyo
-
 # Jupyter
 .ipynb_checkpoints/
 
@@ -22,7 +21,6 @@ __pycache__/
 
 # Generated Files
 outputs/
-models/
 
 # Streamlit
 .streamlit/
