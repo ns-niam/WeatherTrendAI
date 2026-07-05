@@ -5,7 +5,9 @@ def show_header():
     st.title("🌦 WeatherTrendAI")
 
     st.caption(
-        "Production-Ready Machine Learning Platform"
+        "Production-Ready Machine Learning Platform &" 
+
+        "  This project was developed as part of the PM Accelerator AI Engineering Technical Assessment."
     )
 
     st.markdown(

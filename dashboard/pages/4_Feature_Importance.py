@@ -31,11 +31,6 @@ from src.visualization.plots import feature_importance_plot
 
 fig = feature_importance_plot(df)
 
-st.plotly_chart(
-    fig,
-    width="stretch",
-)
-
 fig.update_layout(
     yaxis=dict(autorange="reversed")
 )

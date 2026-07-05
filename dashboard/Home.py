@@ -90,7 +90,6 @@ show_leaderboard()
 
 show_model_chart()
 
-show_footer()
 
 st.divider()
 
@@ -98,9 +97,41 @@ st.subheader(" About PM Accelerator")
 
 st.info(
     """
-This project was developed as part of the PM Accelerator AI Engineering Technical Assessment.
+This project was developed as part of the **PM Accelerator AI Engineering Technical Assessment**.
 
-PM Accelerator's mission is to help aspiring AI engineers and product builders
-gain practical experience through real-world projects, mentorship, and innovation.
+**PM Accelerator Mission**
+
+PM Accelerator empowers aspiring AI engineers and product builders by providing
+real-world projects, mentorship, and hands-on experience to build practical,
+industry-ready AI solutions.
 """
 )
+
+st.divider()
+
+left, right = st.columns([3, 2])
+
+with left:
+
+    st.markdown(
+        """
+###  Developed by
+
+**Md. Sha Niamatullah (NS Niam)**
+
+AI Engineer • Machine Learning 
+
+🔗 GitHub: https://github.com/ns-niam 
+ 
+
+🔗 Website: https://nsniam.dev
+
+"""
+    )
+
+with right:
+
+    st.success("✅ WeatherTrendAI v1.0")
+
+
+show_footer()

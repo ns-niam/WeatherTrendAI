@@ -35,13 +35,8 @@ st.plotly_chart(
     width="stretch",
 )
 
-st.plotly_chart(
-    fig,
-    width="stretch",
-)
-
 st.download_button(
-    "Download Forecast",
+    "⬇ Download Forecast",
     df.to_csv(index=False),
     file_name="forecast.csv",
     mime="text/csv",
