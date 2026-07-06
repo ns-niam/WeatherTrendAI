@@ -492,15 +492,13 @@ docs/
     ├── forecast.png
     └── project_summary.png
 
-
-
-    ## 📸 Dashboard Screenshots
+## 📸 Dashboard Screenshots
 
 ### 🏠 Home Dashboard
 
 Provides an overview of the project, model performance, and navigation to all dashboard pages.
 
-![Home Dashboard](.docs/screenshots/home.png)
+![Home Dashboard](./docs/screenshots/home.png)
 
 ---
 
@@ -508,7 +506,7 @@ Provides an overview of the project, model performance, and navigation to all da
 
 Predict weather temperature using manually entered weather parameters.
 
-![Single Prediction](.docs/screenshots/single_prediction.png)
+![Single Prediction](./docs/screenshots/single_prediction.png)
 
 ---
 
@@ -516,7 +514,7 @@ Predict weather temperature using manually entered weather parameters.
 
 Upload a CSV file and generate predictions for multiple weather records.
 
-![Batch Prediction](.docs/screenshots/batch_prediction.png)
+![Batch Prediction](./docs/screenshots/batch_prediction.png)
 
 ---
 
@@ -524,7 +522,7 @@ Upload a CSV file and generate predictions for multiple weather records.
 
 Compare the performance of all machine learning models using evaluation metrics.
 
-![Model Leaderboard](.docs/screenshots/leaderboard.png)
+![Model Leaderboard](./docs/screenshots/leaderboard.png)
 
 ---
 
@@ -532,7 +530,7 @@ Compare the performance of all machine learning models using evaluation metrics.
 
 Visualize the contribution of each feature used by the Random Forest model.
 
-![Feature Importance](.docs/screenshots/feature_importance.png)
+![Feature Importance](./docs/screenshots/feature_importance.png)
 
 ---
 
@@ -540,7 +538,7 @@ Visualize the contribution of each feature used by the Random Forest model.
 
 Forecast future weather trends using the Prophet time-series forecasting model.
 
-![Forecast](.docs/screenshots/forecast.png)
+![Forecast](./docs/screenshots/forecast.png)
 
 ---
 
@@ -548,10 +546,11 @@ Forecast future weather trends using the Prophet time-series forecasting model.
 
 Displays the final project summary, methodology, and key findings.
 
-![Project Summary](.docs/screenshots/project_summary.png)
+![Project Summary](./docs/screenshots/project_summary.png)
 
-## 📊 Results & Key Insights
+---
 
+   
 ### Model Performance
 
 - 🏆 **Best Model:** Random Forest Regressor
