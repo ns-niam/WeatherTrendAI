@@ -20,7 +20,27 @@ st.set_page_config(
 
 st.title("📂 Batch Prediction")
 
-predictor = Predictor("outputs/models/best_model.pkl")
+st.caption(
+    "Upload a CSV file containing the required weather features to generate batch predictions."
+)
+
+predictor = Predictor(
+    "outputs/models/best_model.pkl"
+)
+
+# Required features
+required = predictor.model.feature_names_in_.tolist()
+
+# Download template
+template = pd.DataFrame(columns=required)
+
+st.download_button(
+    "📥 Download CSV Template",
+    template.to_csv(index=False),
+    file_name="prediction_template.csv",
+    mime="text/csv",
+    width="stretch",
+)
 
 uploaded = st.file_uploader(
     "Upload CSV",
@@ -31,24 +51,65 @@ if uploaded:
 
     df = pd.read_csv(uploaded)
 
+    st.subheader("Dataset Preview")
+
     st.dataframe(
         df.head(),
         width="stretch",
     )
 
-    if st.button("Predict", width="stretch"):
+    if st.button(
+        " Predict",
+        width="stretch",
+    ):
 
-        result = predictor.predict(df)
+        missing = [
+            col
+            for col in required
+            if col not in df.columns
+        ]
 
-        st.dataframe(
-            result,
-            width="stretch",
-        )
+        if missing:
 
-        st.download_button(
-            "Download CSV",
-            result.to_csv(index=False),
-            file_name="prediction.csv",
-            mime="text/csv",
-            width="stretch",
-        )
+            st.error(
+                "The uploaded CSV is missing required features."
+            )
+
+            st.write("### Missing Columns")
+
+            st.write(missing)
+
+            st.info(
+                "Please download the template above and upload a CSV with the required columns."
+            )
+
+            st.stop()
+
+        try:
+
+            result = predictor.predict(df)
+
+            st.success(
+                "Prediction completed successfully."
+            )
+
+            st.subheader("Prediction Result")
+
+            st.dataframe(
+                result,
+                width="stretch",
+            )
+
+            st.download_button(
+                "⬇ Download Prediction",
+                result.to_csv(index=False),
+                file_name="weather_predictions.csv",
+                mime="text/csv",
+                width="stretch",
+            )
+
+        except Exception as e:
+
+            st.error(
+                f"Prediction failed: {e}"
+            )
