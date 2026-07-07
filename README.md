@@ -25,10 +25,7 @@
 
 ## 🎥 Project Demo
 
-> **Watch the complete project walkthrough and live demonstration.**
-
-📺 **Demo Video:**  
-
+https://github.com/user-attachments/assets/9bad1632-44f3-4888-8b7c-54a956ee6731
 
 ---
 
